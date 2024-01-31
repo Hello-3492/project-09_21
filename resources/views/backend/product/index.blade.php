@@ -21,22 +21,25 @@
                                 <tbody class="table-border-bottom-0">
                                     @foreach ($product as $pro)
                                     <tr>
-                                        <td>{{ $product->firstItem() + $loop->index }}</td>
+                                        <td>{{ $product->firstItem() + $loop->index}}</td>
                                         <td>{{ $pro->name}}</td>
                                         <td>
-                                          <img src="{{ asset('backend/product/resize/'.$pro->image) }}" alt="">
+                                            <img src="{{ asset('backend/product/resize/'.$pro->image)}}">
                                         </td>
-                                        <td> {{$pro->price}}</td>
-                                        <td>{{$pro->description}}</td>
-                                        <td>{{$pro->created_at}}</td>
-                                        <td>{{$pro->updated_at}}</td>
                                         <td>
-                                    <a href="#"><i class='bx bxs-edit'></i></a>
-                                    <a href="#"><i class='bx bx-trash'></i></a>
-                                  </td>
-                                  </tr>
-                                  @endforeach
+                                            <td>{{ $pro->price }}</td>
+                                            <td>{{ $pro->description }}</td>
+                                            <td>{{ $pro->created_at }}</td>
+                                            <td>{{ $pro->update_at }}</td>
+                                        <td>
+                                            <a href="{{ url('admin/product/edit/'.$pro->products_id) }}"><i>แก้ไข</i></a>
+                                      <a href="{{ url('admin/products/delete/'.$pro->products_id) }}"><i>ลบ</i></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
+                              </table>
+
                               </table>
                             </div>
                           </div>
